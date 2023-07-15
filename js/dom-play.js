@@ -46,7 +46,7 @@ function highlightActor(actor){
 
 const spans = document.querySelectorAll("#play span");
 console.log(spans);
-
+t
 for(const mySpan of spans){
     //mySpan.addEventListener("click" ,myAlert);
     mySpan.addEventListener("click" , function(ev){
