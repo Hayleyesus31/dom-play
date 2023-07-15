@@ -22,11 +22,8 @@ function highlight(el){
 
     if( el.style.backgroundColor == 'white'){//orange
         el.style.backgroundColor='orange'
-
     }else{//white
         el.style.backgroundColor='white'
-
-
     }
 }
     function highlightActor(actor){
@@ -36,13 +33,23 @@ function highlight(el){
     function myAlert(){
         alert("I'm clicked!");
     }
-
+function highlightActor(actor){
+    //alert("hi, I'm " + actor);
+    for(const mySpan of spans){
+        if( actor == mySpan.dataset.actor){//current actor
+            mySpan.style.backgroundColor='orange'
+        }else{//white
+            mySpan.style.backgroundColor='white'
+        }
+    }
+}
 
 const spans = document.querySelectorAll("#play span");
 console.log(spans);
+
 for(const mySpan of spans){
     //mySpan.addEventListener("click" ,myAlert);
     mySpan.addEventListener("click" , function(ev){
-        highlightActor(mySpan.CDATA_SECTION_NODE.actor);
+        highlightActor(mySpan.dataset.actor);
     });
 }
